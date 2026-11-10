@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Cover · RAG Recruitment</title>
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { --a: #b6ff5c; --bg: radial-gradient(700px 600px at 35% 55%, rgba(120,255,90,.18), transparent 65%), radial-gradient(600px 500px at 100% 0%, rgba(0,200,160,.20), transparent 70%), linear-gradient(160deg, #040a04, #071207 55%, #020502); --edge: rgba(182,255,92,.25); }
+  .vec { position: absolute; left: 80px; top: 230px; width: 620px; height: 640px; }
+  .pt { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: rgba(182,255,92,.35); }
+  .pt.hit { width: 22px; height: 22px; background: #b6ff5c; box-shadow: 0 0 30px 6px rgba(182,255,92,.6); }
+  .q { position: absolute; left: 280px; top: 300px; width: 30px; height: 30px; border-radius: 8px; background: #fff; box-shadow: 0 0 40px 10px rgba(255,255,255,.5); transform: rotate(45deg); }
+  .line { position: absolute; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,.8), rgba(182,255,92,.8)); transform-origin: left center; }
+  .vlab { position: absolute; left: 0; bottom: 0; }
+  .chat { left: 760px; top: 200px; width: 760px; padding: 26px; display: grid; gap: 16px; background: rgba(8,18,8,.88); }
+  .m { max-width: 88%; padding: 16px 18px; border-radius: 18px; font-size: 19px; line-height: 1.5; }
+  .m small { display: block; font: 600 12.5px "JetBrains Mono", monospace; letter-spacing: .1em; color: #8fae7a; margin-bottom: 6px; }
+  .rec { margin-left: auto; background: #1b2b16; border: 1px solid rgba(255,255,255,.08); }
+  .ai { background: rgba(182,255,92,.08); border: 1px solid rgba(182,255,92,.35); }
+  .cites { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .cites span { font: 600 13px "JetBrains Mono", monospace; padding: 6px 10px; border-radius: 8px; background: rgba(182,255,92,.14); color: #d8ff9e; }
+  .none { background: rgba(255,255,255,.04); border: 1px dashed rgba(255,255,255,.25); color: #c9d6c0; }
+</style></head>
+<body class="pattern-dots">
+  <div class="head"><p>Pinecone · OpenAI embeddings · n8n</p><h1>RAG Recruitment Assistant</h1></div>
+  <div class="vec">
+    <span class="pt" style="left:40px;top:80px"></span><span class="pt" style="left:120px;top:420px"></span><span class="pt" style="left:520px;top:120px"></span>
+    <span class="pt" style="left:470px;top:520px"></span><span class="pt" style="left:80px;top:250px"></span><span class="pt" style="left:560px;top:330px"></span>
+    <span class="pt" style="left:220px;top:560px"></span><span class="pt" style="left:360px;top:60px"></span><span class="pt" style="left:30px;top:520px"></span>
+    <span class="line" style="left:295px;top:315px;width:120px;transform:rotate(-38deg)"></span>
+    <span class="line" style="left:295px;top:315px;width:150px;transform:rotate(22deg)"></span>
+    <span class="line" style="left:295px;top:315px;width:110px;transform:rotate(128deg)"></span>
+    <span class="pt hit" style="left:384px;top:232px"></span><span class="pt hit" style="left:432px;top:362px"></span><span class="pt hit" style="left:212px;top:390px"></span>
+    <span class="q"></span>
+    <p class="vlab label">vector store · top-3 matches</p>
+  </div>
+  <div class="glass chat">
+    <div class="m rec"><small>RECRUITER</small>Has Taher worked with AWS in production?</div>
+    <div class="m ai"><small>ASSISTANT · FROM CV</small>Yes. He deployed Java/Spring Boot microservices on AWS and Azure with CI/CD for banking clients, and holds AWS Cloud Practitioner.
+      <div class="cites"><span>cv › experience</span><span>cv › certifications</span></div></div>
+    <div class="m rec"><small>RECRUITER</small>What's his notice period?</div>
+    <div class="m none"><small>ASSISTANT</small>That isn't in the knowledge base, so I won't guess.</div>
+  </div>
+</body></html>

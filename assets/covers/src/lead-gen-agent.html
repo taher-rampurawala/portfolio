@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Cover · Lead Gen Agent</title>
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { --a: #3fd0ff; --bg: radial-gradient(700px 600px at 25% 55%, rgba(34,158,217,.35), transparent 65%), radial-gradient(600px 500px at 100% 100%, rgba(0,200,140,.22), transparent 70%), linear-gradient(160deg, #020d17, #05182a 55%, #020a12); --edge: rgba(63,208,255,.28); }
+  .tg { left: 100px; top: 240px; width: 520px; padding: 26px; display: grid; gap: 14px; background: rgba(23,33,43,.9); }
+  .m { max-width: 90%; padding: 14px 16px; border-radius: 16px; font-size: 18px; line-height: 1.45; background: #202b36; }
+  .m.me { margin-left: auto; background: #2b5278; }
+  .voice { display: flex; align-items: center; gap: 12px; }
+  .voice .pl { width: 44px; height: 44px; border-radius: 50%; background: #3fd0ff; color: #02131f; display: grid; place-items: center; font-weight: 700; }
+  .wave { display: flex; gap: 3px; align-items: center; height: 34px; }
+  .wave i { width: 4px; border-radius: 2px; background: #9fdfff; }
+  .voice span { font: 600 13px "JetBrains Mono", monospace; color: #9fdfff; }
+  .whisper { font: 600 13px "JetBrains Mono", monospace; color: #7d93a8; }
+  .sheet { left: 700px; top: 220px; width: 800px; padding: 0; overflow: hidden; background: rgba(6,20,32,.92); }
+  .sheet__bar { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .sheet__bar b { font-size: 20px; display: flex; align-items: center; gap: 12px; }
+  .sheet__bar b::before { content: ""; width: 26px; height: 26px; border-radius: 6px; background: #1fa463; }
+  table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  th { text-align: left; padding: 12px 20px; font: 600 12.5px "JetBrains Mono", monospace; letter-spacing: .1em; color: #7d93a8; background: rgba(255,255,255,.03); }
+  td { padding: 13px 20px; border-top: 1px solid rgba(255,255,255,.06); }
+  td.in { color: #3fd0ff; font: 500 14px "JetBrains Mono", monospace; }
+  tr.dup td { color: #5b6b7a; text-decoration: line-through; }
+  .foot { display: flex; gap: 12px; padding: 18px 20px; border-top: 1px solid rgba(255,255,255,.08); }
+  .apify { position: absolute; left: 100px; top: 700px; z-index: 3; padding: 12px 16px; border-radius: 14px; background: #0b1d2b; border: 1px solid #ff9a3c; color: #ffc48a; font: 600 15px "JetBrains Mono", monospace; box-shadow: 0 20px 40px -12px rgba(0,0,0,.9); }
+</style></head>
+<body class="pattern-grid">
+  <div class="head"><p>Telegram · Whisper · Apify · n8n</p><h1>AI Lead Generation Agent</h1></div>
+  <div class="glass tg">
+    <div class="m me voice"><span class="pl">▶</span><span class="wave"><i style="height:10px"></i><i style="height:22px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:26px"></i><i style="height:12px"></i><i style="height:30px"></i><i style="height:18px"></i><i style="height:24px"></i><i style="height:10px"></i></span><span>0:07</span></div>
+    <p class="whisper">↳ Whisper: "Dentists in Dubai, clinic owners"</p>
+    <div class="m">Got it. How many leads do you need?</div>
+    <div class="m me">50 please</div>
+    <div class="m">✅ Done! Sheet sent to your email.</div>
+  </div>
+  <span class="apify">⚙ Apify actor · scraping</span>
+  <div class="glass sheet">
+    <div class="sheet__bar"><b>Leads · Dentists Dubai</b><span class="chip">50 rows</span></div>
+    <table>
+      <tr><th>NAME</th><th>TITLE</th><th>COMPANY</th><th>LINKEDIN</th></tr>
+      <tr><td>Dr. Sara Haddad</td><td>Clinic Owner</td><td>Pearl Dental</td><td class="in">in/sara-h…</td></tr>
+      <tr><td>Dr. Omar Nasser</td><td>Founder</td><td>Smile Studio</td><td class="in">in/omar-n…</td></tr>
+      <tr class="dup"><td>Dr. Omar Nasser</td><td>Founder</td><td>Smile Studio</td><td>duplicate</td></tr>
+      <tr><td>Dr. Leena Rao</td><td>Owner</td><td>Bright Clinic</td><td class="in">in/leena-r…</td></tr>
+      <tr><td>Dr. Faisal Amin</td><td>Director</td><td>Dentique</td><td class="in">in/faisal-a…</td></tr>
+    </table>
+    <div class="foot"><span class="chip">deduped by LinkedIn URL</span><span class="chip">✉ emailed via Gmail</span></div>
+  </div>
+</body></html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cover · Invoice OCR</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 1000px; overflow: hidden; }
+  body {
+    position: relative; font-family: "Inter Tight", sans-serif; color: #fff5e6; -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(700px 600px at 30% 55%, rgba(255, 170, 40, .32), transparent 65%),
+      radial-gradient(600px 500px at 100% 100%, rgba(255, 110, 40, .25), transparent 70%),
+      linear-gradient(160deg, #1a1006, #140b03 60%, #0d0702);
+  }
+  body::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,200,120,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,200,120,.06) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(70% 70% at 40% 55%, #000, transparent); }
+
+  .head { position: absolute; left: 90px; top: 80px; }
+  .head p { font: 600 16px "JetBrains Mono", monospace; letter-spacing: .2em; color: #ffb547; text-transform: uppercase; }
+  .head h1 { margin-top: 12px; font-size: 56px; font-weight: 700; letter-spacing: -0.03em; }
+  .result { position: absolute; right: 90px; top: 84px; text-align: right; }
+  .result b { display: block; font-size: 52px; font-weight: 700; letter-spacing: -0.03em; color: #ffb547; }
+  .result span { font: 600 15px "JetBrains Mono", monospace; letter-spacing: .1em; color: #d9b98c; }
+
+  /* receipt */
+  .receipt { position: absolute; left: 200px; top: 250px; width: 420px; padding: 34px 32px 50px; background: #fbf6ec; color: #2b2116; border-radius: 6px; transform: rotate(-6deg); box-shadow: 0 50px 100px -30px rgba(0,0,0,.85); font-family: "JetBrains Mono", monospace; }
+  .receipt::after { content: ""; position: absolute; left: 0; right: 0; bottom: -14px; height: 16px; background: radial-gradient(circle at 10px 0, transparent 9px, #fbf6ec 9.5px) 0 0 / 20px 16px repeat-x; }
+  .receipt h3 { font-size: 24px; text-align: center; letter-spacing: .1em; }
+  .receipt .sub { text-align: center; font-size: 14px; color: #8a7a64; margin: 6px 0 22px; }
+  .row { display: flex; justify-content: space-between; font-size: 17px; padding: 7px 0; border-bottom: 1px dashed #d8ccb6; }
+  .row.total { font-size: 22px; font-weight: 600; border: 0; padding-top: 16px; }
+  .hl { background: rgba(255, 181, 71, .45); outline: 2px solid #ff9d1a; outline-offset: 2px; border-radius: 3px; }
+  .scan { position: absolute; left: -30px; right: -30px; top: 46%; height: 4px; background: #ffb547; box-shadow: 0 0 30px 8px rgba(255,181,71,.8); border-radius: 4px; }
+
+  /* beams to card */
+  .beam { position: absolute; left: 640px; top: 470px; width: 220px; height: 3px; background: linear-gradient(90deg, rgba(255,181,71,0), #ffb547); }
+  .beam::after { content: ""; position: absolute; right: -2px; top: -7px; border: 8px solid transparent; border-left: 12px solid #ffb547; }
+
+  /* extracted card */
+  .card { position: absolute; right: 110px; top: 250px; width: 620px; padding: 32px; border-radius: 26px; background: rgba(30, 20, 8, .82); border: 1px solid rgba(255,181,71,.35); backdrop-filter: blur(10px); box-shadow: 0 40px 90px -30px rgba(0,0,0,.8); }
+  .card h2 { font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
+  .card h2 i { width: 12px; height: 12px; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 0 7px rgba(61,220,151,.16); }
+  .fields { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .f { padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+  .f small { display: block; font: 600 12.5px "JetBrains Mono", monospace; letter-spacing: .1em; color: #c9a777; }
+  .f b { display: block; margin-top: 5px; font-size: 21px; font-weight: 600; }
+  .f--total { grid-column: span 2; border-color: rgba(255,181,71,.5); background: rgba(255,181,71,.1); }
+  .f--total b { font-size: 30px; color: #ffcf85; }
+  .folders { margin-top: 22px; display: flex; gap: 12px; }
+  .folders span { display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 12px; font: 600 15px "JetBrains Mono", monospace; border: 1px solid rgba(61,220,151,.4); color: #b9f3d6; background: rgba(61,220,151,.08); }
+  .folders span.err { border-color: rgba(255,110,90,.35); color: #ffc2b5; background: rgba(255,110,90,.06); }
+</style>
+</head>
+<body>
+  <div class="head"><p>Google Drive · Vision LLM · n8n</p><h1>Invoice &amp; Receipt OCR</h1></div>
+  <div class="result"><b>2h → 10m</b><span>INVOICE HANDLING TIME</span></div>
+
+  <div class="receipt">
+    <h3>NORTHWIND SUPPLY</h3>
+    <p class="sub">Invoice #INV-20481 · 04 Nov 2026</p>
+    <div class="row"><span>Office chairs ×2</span><span>₹18,400</span></div>
+    <div class="row"><span>Desk lamp</span><span>₹2,150</span></div>
+    <div class="row"><span>Delivery</span><span>₹600</span></div>
+    <div class="row"><span>GST 18%</span><span class="hl">₹3,807</span></div>
+    <div class="row total"><span>TOTAL</span><span class="hl">₹24,957</span></div>
+    <div class="row" style="border:0;font-size:15px;color:#8a7a64"><span>Paid by</span><span>UPI</span></div>
+    <div class="scan"></div>
+  </div>
+
+  <div class="beam"></div>
+
+  <div class="card">
+    <h2><i></i>Extracted &amp; logged to Sheets</h2>
+    <div class="fields">
+      <div class="f"><small>SUPPLIER</small><b>Northwind Supply</b></div>
+      <div class="f"><small>INVOICE NO.</small><b>INV-20481</b></div>
+      <div class="f"><small>DATE</small><b>2026-11-04</b></div>
+      <div class="f"><small>CATEGORY</small><b>Office equipment</b></div>
+      <div class="f"><small>TAX</small><b>₹3,807</b></div>
+      <div class="f"><small>PAYMENT</small><b>UPI</b></div>
+      <div class="f f--total"><small>TOTAL</small><b>₹24,957</b></div>
+    </div>
+    <div class="folders"><span>📁 Processed / renamed</span><span class="err">📁 Error (if unreadable)</span></div>
+  </div>
+</body>
+</html>

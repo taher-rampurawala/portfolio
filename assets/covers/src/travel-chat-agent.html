@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Cover · Travel Chat Agent</title>
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { --a: #ffd27a; --ink: #fff8ec; --bg: linear-gradient(180deg, #1b2a55 0%, #8a3d6b 38%, #ff8a4c 62%, #ffc370 74%, #0d5d6e 75%, #06323d 100%); }
+  .sun { position: absolute; left: 330px; top: 470px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, #fff3c4, #ffc370 60%, rgba(255,195,112,0) 70%); }
+  .sea { position: absolute; left: 0; right: 0; top: 750px; bottom: 0; background: repeating-linear-gradient(180deg, rgba(255,255,255,.08) 0 2px, transparent 2px 22px); }
+  .isle { position: absolute; left: 90px; top: 690px; width: 520px; height: 90px; border-radius: 50% 50% 0 0; background: #0a2730; }
+  .palm { position: absolute; left: 230px; top: 520px; width: 10px; height: 190px; background: #0a2730; transform: rotate(8deg); border-radius: 6px; }
+  .palm::before { content: "🌴"; position: absolute; left: -70px; top: -70px; font-size: 130px; filter: brightness(0.15) saturate(0); }
+  .head h1 { text-shadow: 0 4px 30px rgba(0,0,0,.35); }
+  .widget { position: absolute; right: 110px; top: 150px; width: 560px; border-radius: 26px; background: rgba(255,255,255,.96); color: #1f2430; box-shadow: 0 60px 120px -30px rgba(0,0,0,.7); overflow: hidden; }
+  .w__bar { display: flex; align-items: center; gap: 14px; padding: 20px 22px; background: linear-gradient(90deg, #0d5d6e, #138a8a); color: #fff; }
+  .w__av { width: 46px; height: 46px; border-radius: 50%; background: #ffd27a; display: grid; place-items: center; font-size: 22px; }
+  .w__bar b { display: block; font-size: 19px; }
+  .w__bar span { font-size: 13px; opacity: .85; }
+  .w__body { padding: 20px; display: grid; gap: 12px; background: #f6f4ef; }
+  .m { max-width: 85%; padding: 13px 16px; border-radius: 16px; font-size: 17px; line-height: 1.45; }
+  .in { background: #fff; border: 1px solid #ebe6dc; }
+  .out { margin-left: auto; background: #0d5d6e; color: #fff; }
+  .pkg { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pkg div { padding: 14px; border-radius: 14px; background: #fff; border: 1px solid #ebe6dc; }
+  .pkg b { display: block; font-size: 16px; }
+  .pkg span { font: 600 13px "JetBrains Mono", monospace; color: #b5651d; }
+  .tools { padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px; background: #fff; border-top: 1px solid #ebe6dc; }
+  .tools span { font: 600 12.5px "JetBrains Mono", monospace; padding: 6px 10px; border-radius: 999px; background: #e7f3f3; color: #0d5d6e; }
+  .esc { position: absolute; right: 150px; bottom: 70px; padding: 14px 20px; border-radius: 16px; background: rgba(6,50,61,.9); border: 1px solid rgba(255,210,122,.5); font: 600 16px "JetBrains Mono", monospace; color: #ffe2a8; }
+</style></head>
+<body>
+  <div class="sun"></div><div class="sea"></div><div class="isle"></div><div class="palm"></div>
+  <div class="head"><p>Website chat · n8n AI agent</p><h1>AI Travel Consultant</h1></div>
+  <div class="widget">
+    <div class="w__bar"><span class="w__av">🧭</span><div><b>Musafir · travel consultant</b><span>usually replies instantly</span></div></div>
+    <div class="w__body">
+      <div class="m in">Honeymoon in December, 7 nights, beach and some culture?</div>
+      <div class="m out">Lovely! Two packages fit well. Want the itinerary for either?</div>
+      <div class="pkg"><div><b>Bali · Uluwatu</b><span>7N · beach + temples</span></div><div><b>Maldives</b><span>6N · overwater villa</span></div></div>
+    </div>
+    <div class="tools"><span>lookup_packages</span><span>lookup_itinerary</span><span>lookup_faqs</span><span>think</span></div>
+  </div>
+  <div class="esc">✉ Hot lead → branded enquiry emailed to an agent</div>
+</body></html>

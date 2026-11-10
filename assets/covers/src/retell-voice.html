@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cover · AI Voice Receptionist</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 1000px; overflow: hidden; }
+  body {
+    position: relative; font-family: "Inter Tight", sans-serif; color: #f1efff; -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(800px 600px at 50% 55%, rgba(124, 77, 255, .45), transparent 65%),
+      radial-gradient(500px 400px at 85% 10%, rgba(0, 229, 255, .22), transparent 70%),
+      radial-gradient(600px 500px at 5% 100%, rgba(255, 64, 160, .18), transparent 70%),
+      #0b0820;
+  }
+  /* starfield / grid */
+  body::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1.4px); background-size: 34px 34px; mask-image: radial-gradient(70% 70% at 50% 50%, #000, transparent); }
+  .mono { font-family: "JetBrains Mono", monospace; }
+
+  /* centre orb */
+  .orb { position: absolute; left: 50%; top: 54%; transform: translate(-50%, -50%); width: 560px; height: 560px; }
+  .ring { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(160, 130, 255, .35); }
+  .ring:nth-child(2) { inset: 60px; border-color: rgba(0, 229, 255, .35); }
+  .ring:nth-child(3) { inset: 120px; border-color: rgba(200, 160, 255, .5); }
+  .core { position: absolute; inset: 170px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #b49bff, #6c3cff 55%, #2a0f8a); box-shadow: 0 0 120px 30px rgba(124,77,255,.65), 0 0 40px 6px rgba(0,229,255,.35) inset; display: grid; place-items: center; }
+  .bars { display: flex; align-items: center; gap: 9px; height: 120px; }
+  .bars i { width: 10px; border-radius: 6px; background: linear-gradient(180deg, #e9fbff, #7ff3ff); box-shadow: 0 0 14px rgba(127,243,255,.9); }
+
+  /* call bubbles */
+  .bubble { position: absolute; padding: 18px 22px; border-radius: 22px; background: rgba(22, 16, 54, .82); border: 1px solid rgba(180,150,255,.35); backdrop-filter: blur(10px); box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); font-size: 25px; line-height: 1.35; max-width: 430px; }
+  .bubble small { display: block; font: 600 14px "JetBrains Mono", monospace; letter-spacing: .12em; color: #9d8cff; margin-bottom: 6px; }
+  .b1 { left: 90px; top: 250px; }
+  .b2 { right: 90px; top: 380px; border-color: rgba(0,229,255,.45); }
+  .b2 small { color: #6ff0ff; }
+  .b3 { left: 150px; bottom: 150px; font-size: 21px; display: flex; align-items: center; gap: 14px; border-color: rgba(61,220,151,.45); }
+  .b3 .tick { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: rgba(61,220,151,.18); color: #3ddc97; font-size: 22px; font-weight: 700; flex: none; }
+  .b3 b { display: block; font-size: 23px; }
+  .b3 span { font: 500 15px "JetBrains Mono", monospace; color: #a9a3c9; }
+
+  .langs { position: absolute; right: 120px; bottom: 170px; display: flex; gap: 12px; }
+  .langs span { padding: 12px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.06); font: 600 18px "JetBrains Mono", monospace; letter-spacing: .06em; }
+
+  .head { position: absolute; left: 90px; top: 80px; }
+  .head p { font: 600 16px "JetBrains Mono", monospace; letter-spacing: .2em; color: #6ff0ff; text-transform: uppercase; }
+  .head h1 { margin-top: 12px; font-size: 56px; font-weight: 700; letter-spacing: -0.03em; }
+  .tag { position: absolute; right: 90px; top: 92px; display: flex; align-items: center; gap: 12px; font: 600 17px "JetBrains Mono", monospace; color: #3ddc97; }
+  .tag i { width: 12px; height: 12px; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 0 7px rgba(61,220,151,.16); }
+</style>
+</head>
+<body>
+  <div class="head"><p>Voice AI · Retell + n8n</p><h1>AI Voice Receptionist</h1></div>
+  <div class="tag"><i></i>LIVE CALL</div>
+
+  <div class="orb">
+    <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+    <div class="core"><div class="bars">
+      <i style="height:34px"></i><i style="height:70px"></i><i style="height:110px"></i><i style="height:58px"></i><i style="height:92px"></i><i style="height:120px"></i><i style="height:66px"></i><i style="height:40px"></i>
+    </div></div>
+  </div>
+
+  <div class="bubble b1"><small>PATIENT</small>Kal shaam ka koi slot free hai?</div>
+  <div class="bubble b2"><small>RIYA · AI</small>Yes, tomorrow 6:30 PM is free. Shall I book it?</div>
+  <div class="bubble b3"><span class="tick">✓</span><div><b>Booking confirmed</b><span>token #4 · Google Sheet</span></div></div>
+  <div class="langs"><span>EN</span><span>HI</span><span>HINGLISH</span></div>
+</body>
+</html>

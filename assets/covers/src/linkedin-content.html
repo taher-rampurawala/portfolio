@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Cover · LinkedIn Content</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 1000px; overflow: hidden; background: #0b1320; }
+  svg { display: block; }
+  .h { font-family: "Inter Tight", sans-serif; font-weight: 300; letter-spacing: -0.035em; }
+  .s { font-family: "Instrument Serif", serif; font-style: italic; }
+  .m { font-family: "JetBrains Mono", monospace; font-weight: 500; letter-spacing: .16em; }
+</style></head>
+<body>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- palette: ground ink-navy, light paper, signal approval-green, brand blue as tone -->
+    <radialGradient id="glow" cx="780" cy="560" r="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="oklch(0.42 0.12 250)" stop-opacity=".55"/><stop offset="1" stop-color="#0b1320" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#e8edf3" stroke-opacity=".045"/></pattern>
+    <linearGradient id="img" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="oklch(0.58 0.15 250)"/><stop offset="1" stop-color="oklch(0.36 0.10 255)"/>
+    </linearGradient>
+    <!-- a draft post: same anatomy, reused -->
+    <symbol id="draft" viewBox="0 0 260 330">
+      <rect width="260" height="330" rx="16" fill="#e8edf3"/>
+      <circle cx="34" cy="34" r="14" fill="oklch(0.36 0.10 255)" opacity=".85"/>
+      <rect x="58" y="26" width="110" height="7" rx="3.5" fill="#0b1320" opacity=".55"/>
+      <rect x="58" y="39" width="70" height="6" rx="3" fill="#0b1320" opacity=".25"/>
+      <rect x="20" y="70" width="220" height="7" rx="3.5" fill="#0b1320" opacity=".45"/>
+      <rect x="20" y="86" width="200" height="7" rx="3.5" fill="#0b1320" opacity=".45"/>
+      <rect x="20" y="102" width="150" height="7" rx="3.5" fill="#0b1320" opacity=".45"/>
+      <rect x="20" y="126" width="220" height="150" rx="10" fill="url(#img)"/>
+      <rect x="20" y="294" width="60" height="7" rx="3.5" fill="#0b1320" opacity=".2"/>
+      <rect x="100" y="294" width="60" height="7" rx="3.5" fill="#0b1320" opacity=".2"/>
+      <rect x="180" y="294" width="60" height="7" rx="3.5" fill="#0b1320" opacity=".2"/>
+    </symbol>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#0b1320"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+
+  <!-- headline -->
+  <text x="80" y="96" class="m" font-size="13" fill="oklch(0.80 0.15 160)">PROJECT 05 · LINKEDIN CONTENT ENGINE</text>
+  <text x="76" y="200" class="h" font-size="92" fill="#e8edf3">Drafted by AI.</text>
+  <text x="76" y="296" class="h" font-size="92" fill="#e8edf3">Approved <tspan class="s" font-size="104" fill="oklch(0.80 0.15 160)">by you.</tspan></text>
+
+  <!-- input: a stack of drafts (repetition = many candidates) -->
+  <text x="80" y="372" class="m" font-size="12" fill="#e8edf3" fill-opacity=".45">DRAFTS · RESEARCHED + ILLUSTRATED</text>
+  <g>
+    <use href="#draft" x="80"  y="400" width="200" height="254" opacity=".22"/>
+    <use href="#draft" x="128" y="420" width="214" height="272" opacity=".38"/>
+    <use href="#draft" x="180" y="440" width="230" height="292" opacity=".62"/>
+    <use href="#draft" x="236" y="460" width="246" height="312"/>
+  </g>
+
+  <!-- the gate -->
+  <path d="M482 600 C 560 600 600 600 700 600" stroke="#e8edf3" stroke-opacity=".3" fill="none"/>
+  <line x1="760" y1="400" x2="760" y2="830" stroke="#e8edf3" stroke-opacity=".14"/>
+  <line x1="760" y1="470" x2="760" y2="730" stroke="oklch(0.80 0.15 160)" stroke-width="2"/>
+  <rect x="712" y="576" width="96" height="48" rx="24" fill="oklch(0.80 0.15 160)"/>
+  <circle cx="784" cy="600" r="18" fill="#0b1320"/>
+  <path d="M776 600 l6 6 l11 -12" stroke="oklch(0.80 0.15 160)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="760" y="384" text-anchor="middle" class="m" font-size="12" fill="#e8edf3" fill-opacity=".55">REVIEW IN TELEGRAM</text>
+
+  <!-- approved path -->
+  <path d="M808 600 C 880 600 880 480 960 480" stroke="oklch(0.80 0.15 160)" stroke-width="1.5" fill="none"/>
+  <circle cx="960" cy="480" r="4" fill="oklch(0.80 0.15 160)"/>
+  <!-- published post -->
+  <g>
+    <rect x="964" y="230" width="352" height="446" rx="20" fill="none" stroke="oklch(0.80 0.15 160)" stroke-opacity=".35"/>
+    <use href="#draft" x="980" y="246" width="320" height="406"/>
+    <rect x="1252" y="262" width="34" height="34" rx="7" fill="oklch(0.55 0.15 250)"/>
+    <text x="1269" y="286" text-anchor="middle" font-family="Inter Tight" font-weight="700" font-size="19" fill="#fff">in</text>
+  </g>
+  <text x="964" y="206" class="m" font-size="12" fill="oklch(0.80 0.15 160)">APPROVED · PUBLISHED</text>
+
+  <!-- declined path -->
+  <path d="M760 730 C 760 790 860 790 1340 790" stroke="#e8edf3" stroke-opacity=".22" stroke-dasharray="4 6" fill="none"/>
+  <rect x="1344" y="700" width="140" height="178" rx="12" fill="none" stroke="#e8edf3" stroke-opacity=".25" stroke-dasharray="4 6"/>
+  <path d="M1402 777 l24 24 M1426 777 l-24 24" stroke="#e8edf3" stroke-opacity=".4" stroke-width="2" stroke-linecap="round"/>
+  <text x="1344" y="680" class="m" font-size="12" fill="#e8edf3" fill-opacity=".45">DECLINED · NOT POSTED</text>
+
+  <!-- process notation -->
+  <line x1="80" y1="920" x2="1520" y2="920" stroke="#e8edf3" stroke-opacity=".16"/>
+  <g class="m" font-size="12" fill="#e8edf3">
+    <circle cx="80" cy="920" r="5" fill="oklch(0.80 0.15 160)"/><text x="98" y="924" fill-opacity=".8">01 INTAKE</text>
+    <circle cx="300" cy="920" r="5" fill="#0b1320" stroke="oklch(0.80 0.15 160)" stroke-width="1.5"/><text x="318" y="924" fill-opacity=".8">02 RESEARCH</text>
+    <circle cx="540" cy="920" r="5" fill="#0b1320" stroke="oklch(0.80 0.15 160)" stroke-width="1.5"/><text x="558" y="924" fill-opacity=".8">03 DRAFT + IMAGE</text>
+    <circle cx="830" cy="920" r="5" fill="oklch(0.80 0.15 160)"/><text x="848" y="924" fill-opacity=".8">04 APPROVE</text>
+    <circle cx="1060" cy="920" r="5" fill="#0b1320" stroke="oklch(0.80 0.15 160)" stroke-width="1.5"/><text x="1078" y="924" fill-opacity=".8">05 PUBLISH</text>
+    <text x="1520" y="924" text-anchor="end" fill-opacity=".4">TAVILY · GPT-IMAGE-2</text>
+  </g>
+</svg>
+</body></html>

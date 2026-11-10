@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Cover · WhatsApp CRM</title>
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { --a: #2ee6d6; --bg: radial-gradient(700px 520px at 75% 40%, rgba(46,230,214,.22), transparent 65%), radial-gradient(600px 500px at 0% 100%, rgba(60,120,255,.22), transparent 70%), linear-gradient(160deg, #04121a, #061a24 55%, #030c12); --edge: rgba(46,230,214,.25); }
+  .board { left: 90px; top: 220px; width: 1420px; height: 700px; padding: 28px; display: grid; grid-template-columns: 300px 1fr; gap: 26px; }
+  .inbox { display: grid; gap: 12px; align-content: start; }
+  .conv { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); }
+  .conv.on { background: rgba(46,230,214,.12); border-color: rgba(46,230,214,.5); }
+  .av { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 16px; color: #04121a; flex: none; }
+  .conv b { display: block; font-size: 17px; }
+  .conv span { font-size: 14px; color: #8fb3bb; }
+  .conv em { margin-left: auto; font-style: normal; font: 600 12px "JetBrains Mono", monospace; padding: 5px 9px; border-radius: 999px; background: #25d366; color: #052b16; }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .col { border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); padding: 18px; display: grid; gap: 12px; align-content: start; }
+  .col h3 { display: flex; justify-content: space-between; font: 600 14px "JetBrains Mono", monospace; letter-spacing: .1em; color: #9fd9d3; }
+  .deal { padding: 16px; border-radius: 14px; background: #0c2430; border: 1px solid rgba(255,255,255,.08); border-left: 4px solid var(--c, #2ee6d6); }
+  .deal b { display: block; font-size: 17px; }
+  .deal span { display: block; margin-top: 4px; font: 500 13px "JetBrains Mono", monospace; color: #8fb3bb; }
+  .flow { position: absolute; right: 120px; bottom: 120px; display: flex; align-items: center; gap: 12px; z-index: 3; }
+  .node { padding: 14px 18px; border-radius: 14px; background: rgba(4,18,26,.95); border: 1px solid rgba(46,230,214,.45); font: 600 15px "JetBrains Mono", monospace; box-shadow: 0 20px 40px -20px rgba(0,0,0,.9); }
+  .node.n8n { border-color: #ff6d5a; color: #ffb3a8; }
+  .arrow { width: 34px; height: 2px; background: #2ee6d6; position: relative; }
+  .arrow::after { content: ""; position: absolute; right: -2px; top: -5px; border: 6px solid transparent; border-left: 9px solid #2ee6d6; }
+</style></head>
+<body class="pattern-dots">
+  <div class="head"><p>Next.js · Supabase · n8n</p><h1>WhatsApp CRM Automation</h1></div>
+  <div class="glass board">
+    <div class="inbox">
+      <p class="label">Shared inbox</p>
+      <div class="conv on"><span class="av" style="background:#ff8a7a">PS</span><div><b>Priya S.</b><span>Book for 7 PM?</span></div><em>AI</em></div>
+      <div class="conv"><span class="av" style="background:#7aa2ff">RK</span><div><b>Rahul K.</b><span>Thanks!</span></div></div>
+      <div class="conv"><span class="av" style="background:#ffc76a">AM</span><div><b>Ayesha M.</b><span>Bali package price</span></div></div>
+      <div class="conv"><span class="av" style="background:#6fe3b4">DV</span><div><b>Dev V.</b><span>Assigned · Reception</span></div></div>
+    </div>
+    <div class="cols">
+      <div class="col"><h3>NEW LEAD <span>3</span></h3>
+        <div class="deal" style="--c:#7aa2ff"><b>Ayesha · Bali trip</b><span>tag: travel</span></div>
+        <div class="deal" style="--c:#7aa2ff"><b>Karan · Whitening</b><span>tag: dental</span></div></div>
+      <div class="col"><h3>BOOKED <span>5</span></h3>
+        <div class="deal" style="--c:#25d366"><b>Priya · Check-up</b><span>today 7:00 PM</span></div>
+        <div class="deal" style="--c:#25d366"><b>Rahul · Cleaning</b><span>tomorrow 6:30 PM</span></div></div>
+      <div class="col"><h3>BROADCAST <span>✓✓</span></h3>
+        <div class="deal" style="--c:#ffc76a"><b>Diwali offer</b><span>412 delivered · 61% read</span></div></div>
+    </div>
+  </div>
+  <div class="flow"><span class="node">⚡ keyword "book"</span><span class="arrow"></span><span class="node">📋 send list</span><span class="arrow"></span><span class="node n8n">↗ webhook → n8n</span></div>
+</body></html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Cover · Gmail Assistant</title>
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { --a: #d93025; --ink: #1f1f1f; --muted: #6b6b6b; --bg: radial-gradient(700px 500px at 85% 10%, rgba(234,67,53,.18), transparent 65%), radial-gradient(700px 500px at 0% 100%, rgba(66,133,244,.16), transparent 70%), #f4f1ec; }
+  .pattern::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,0,0,.07) 1px, transparent 1.4px); background-size: 28px 28px; }
+  .inbox { position: absolute; left: 90px; top: 220px; width: 760px; border-radius: 24px; background: #fff; box-shadow: 0 40px 90px -30px rgba(60,40,20,.35); overflow: hidden; }
+  .tabs { display: flex; border-bottom: 1px solid #ececec; }
+  .tabs span { flex: 1; padding: 18px; text-align: center; font-weight: 600; font-size: 16px; color: #666; border-bottom: 3px solid transparent; }
+  .tabs .on { color: #d93025; border-color: #d93025; }
+  .mail { display: grid; grid-template-columns: 34px 180px 1fr auto; gap: 14px; align-items: center; padding: 16px 22px; border-bottom: 1px solid #f1f1f1; font-size: 16px; }
+  .mail b { font-weight: 700; }
+  .mail p { color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mail .chk { width: 20px; height: 20px; border: 2px solid #bbb; border-radius: 4px; }
+  .lbl { font: 600 12px "JetBrains Mono", monospace; padding: 5px 9px; border-radius: 6px; }
+  .l1 { background: #fde7e5; color: #b3261e; } .l2 { background: #e3effd; color: #1a5bbf; } .l3 { background: #e8f5e9; color: #1e7b34; }
+  .mail.read { opacity: .55; }
+  .draft { position: absolute; right: 90px; top: 170px; width: 640px; border-radius: 24px; background: #fff; box-shadow: 0 60px 120px -30px rgba(60,40,20,.45); overflow: hidden; border: 1px solid #f1d6d2; }
+  .d__bar { padding: 16px 22px; background: #2b2b2b; color: #fff; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; }
+  .d__bar span { font: 600 13px "JetBrains Mono", monospace; color: #ffb4ab; }
+  .d__body { padding: 22px; font-size: 17px; line-height: 1.55; color: #2b2b2b; }
+  .d__body small { display: block; font: 600 13px "JetBrains Mono", monospace; color: #888; margin-bottom: 10px; }
+  .src { margin: 0 22px 22px; padding: 16px; border-radius: 16px; background: #f7f4ff; border: 1px solid #e2dbff; }
+  .src .label { color: #5b3fd6; }
+  .src div { margin-top: 10px; display: grid; gap: 8px; }
+  .src span { font: 500 14px "JetBrains Mono", monospace; color: #4a4170; display: flex; justify-content: space-between; }
+  .src em { font-style: normal; color: #5b3fd6; font-weight: 600; }
+  .route { position: absolute; left: 90px; bottom: 80px; display: flex; gap: 12px; }
+  .route .chip { color: #3a3a3a; border-color: #ddd5cc; background: #fff; }
+</style></head>
+<body class="pattern">
+  <div class="head"><p>Gmail · Pinecone RAG · n8n</p><h1>AI Gmail Inbox Assistant</h1></div>
+  <div class="inbox">
+    <div class="tabs"><span class="on">Primary</span><span>Social</span><span>Promotions</span></div>
+    <div class="mail"><i class="chk"></i><b>Recruiter · Nova</b><p>Senior automation role, are you open to…</p><span class="lbl l1">NEEDS REPLY</span></div>
+    <div class="mail"><i class="chk"></i><b>Client · Arun</b><p>Can we extend the WhatsApp flow to…</p><span class="lbl l1">NEEDS REPLY</span></div>
+    <div class="mail read"><i class="chk"></i><b>LinkedIn</b><p>You appeared in 34 searches this week</p><span class="lbl l2">SOCIAL · READ</span></div>
+    <div class="mail read"><i class="chk"></i><b>Store</b><p>48-hour sale, up to 60% off</p><span class="lbl l3">PROMO · ARCHIVED</span></div>
+    <div class="mail read"><i class="chk"></i><b>Newsletter</b><p>This week in AI agents</p><span class="lbl l3">PROMO · ARCHIVED</span></div>
+  </div>
+  <div class="draft">
+    <div class="d__bar">Re: Senior automation role <span>AI DRAFT · SAVED FOR REVIEW</span></div>
+    <div class="d__body"><small>TO: recruiter@nova.example</small>Thanks for reaching out! I have 13 years of engineering behind me and now build n8n and AI-agent automations. Happy to share my portfolio and set up a call this week.</div>
+    <div class="src"><p class="label">Grounded in · Pinecone</p><div><span>profile.md › experience <em>0.91</em></span><span>projects.md › voice agent <em>0.87</em></span></div></div>
+  </div>
+  <div class="route"><span class="chip">AI text classifier</span><span class="chip">reply / draft / no-action</span><span class="chip">structured JSON output</span></div>
+</body></html>

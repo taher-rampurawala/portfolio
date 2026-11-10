@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cover · WhatsApp Booking Bot</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 1000px; overflow: hidden; }
+  body {
+    position: relative; font-family: "Inter Tight", sans-serif; color: #eafff1; -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(700px 600px at 30% 60%, rgba(37, 211, 102, .30), transparent 65%),
+      radial-gradient(600px 500px at 95% 0%, rgba(18, 140, 126, .40), transparent 70%),
+      linear-gradient(160deg, #04140d, #061f16 60%, #03100a);
+  }
+  /* WhatsApp-like doodle pattern */
+  body::before { content: ""; position: absolute; inset: 0; opacity: .08; background-image:
+    radial-gradient(circle at 20px 20px, #fff 2px, transparent 2.5px),
+    radial-gradient(circle at 60px 50px, transparent 9px, #fff 9.5px, #fff 11px, transparent 11.5px);
+    background-size: 80px 80px; }
+
+  .head { position: absolute; left: 90px; top: 80px; }
+  .head p { font: 600 16px "JetBrains Mono", monospace; letter-spacing: .2em; color: #25d366; text-transform: uppercase; }
+  .head h1 { margin-top: 12px; font-size: 56px; font-weight: 700; letter-spacing: -0.03em; }
+
+  /* phone */
+  .phone { position: absolute; left: 190px; top: 210px; width: 430px; height: 860px; border-radius: 56px; background: #0b0f0d; border: 10px solid #1d2622; box-shadow: 0 60px 120px -30px rgba(0,0,0,.85), 0 0 0 2px rgba(37,211,102,.25); overflow: hidden; transform: rotate(-4deg); }
+  .bar { display: flex; align-items: center; gap: 14px; padding: 34px 22px 18px; background: #1f2c34; }
+  .bar .av { width: 46px; height: 46px; border-radius: 50%; background: #25d366; display: grid; place-items: center; font-size: 24px; }
+  .bar b { display: block; font-size: 20px; }
+  .bar span { font-size: 14px; color: #8fd8a8; }
+  .chat { padding: 20px 18px; display: grid; gap: 12px; background: #0b141a; height: 100%; }
+  .m { max-width: 82%; padding: 12px 14px; border-radius: 12px; font-size: 18px; line-height: 1.4; }
+  .m--in { background: #202c33; }
+  .m--out { margin-left: auto; background: #005c4b; }
+  .list { margin-left: auto; width: 82%; border-radius: 12px; overflow: hidden; background: #005c4b; }
+  .list p { padding: 12px 14px; font-size: 18px; }
+  .list div { padding: 12px 14px; border-top: 1px solid rgba(255,255,255,.12); color: #53bdeb; font-weight: 600; font-size: 17px; text-align: center; }
+
+  /* slot board */
+  .board { position: absolute; right: 110px; top: 250px; width: 700px; padding: 34px; border-radius: 28px; background: rgba(8, 30, 20, .78); border: 1px solid rgba(37,211,102,.3); backdrop-filter: blur(10px); box-shadow: 0 40px 90px -30px rgba(0,0,0,.8); }
+  .board h2 { font-size: 28px; font-weight: 600; display: flex; justify-content: space-between; align-items: baseline; }
+  .board h2 span { font: 600 15px "JetBrains Mono", monospace; color: #8fd8a8; letter-spacing: .08em; }
+  .slots { margin-top: 26px; display: grid; gap: 14px; }
+  .slot { display: grid; grid-template-columns: 130px 1fr auto; align-items: center; gap: 18px; padding: 18px 22px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); font-size: 20px; }
+  .slot time { font: 600 20px "JetBrains Mono", monospace; color: #cfeedd; }
+  .slot em { font-style: normal; font: 600 14px "JetBrains Mono", monospace; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.07); color: #9fb8ab; }
+  .slot--new { background: rgba(37,211,102,.16); border-color: #25d366; box-shadow: 0 0 40px -10px rgba(37,211,102,.8); }
+  .slot--new em { background: #25d366; color: #052b16; }
+  .foot { margin-top: 24px; display: flex; gap: 12px; }
+  .foot span { padding: 10px 16px; border-radius: 999px; border: 1px solid rgba(37,211,102,.35); font: 600 15px "JetBrains Mono", monospace; color: #bff3d2; }
+</style>
+</head>
+<body>
+  <div class="head"><p>WhatsApp Cloud API · n8n</p><h1>Appointment Booking Bot</h1></div>
+
+  <div class="phone">
+    <div class="bar"><span class="av">🦷</span><div><b>Smile Dental</b><span>online</span></div></div>
+    <div class="chat">
+      <div class="m m--in">Hi, I'd like to book a check-up</div>
+      <div class="m m--out">Sure! What's the reason for your visit?</div>
+      <div class="list"><p>Choose one:</p><div>☰ Check-up</div><div>☰ Tooth pain</div><div>☰ Cleaning</div></div>
+      <div class="m m--in">Check-up</div>
+      <div class="m m--out">✅ Booked for today, 7:30 PM. See you soon!</div>
+    </div>
+  </div>
+
+  <div class="board">
+    <h2>Today's slots <span>5 / DAY · 5 PM CUTOFF</span></h2>
+    <div class="slots">
+      <div class="slot"><time>7:00 PM</time><span>Rahul K.</span><em>BOOKED</em></div>
+      <div class="slot"><time>7:15 PM</time><span>Ayesha M.</span><em>BOOKED</em></div>
+      <div class="slot slot--new"><time>7:30 PM</time><span>Priya S. · check-up</span><em>JUST BOOKED</em></div>
+      <div class="slot"><time>7:45 PM</time><span>Dev V.</span><em>BOOKED</em></div>
+      <div class="slot"><time>8:00 PM</time><span>Neha J.</span><em>BOOKED</em></div>
+    </div>
+    <div class="foot"><span>no LLM in booking path</span><span>full → offers tomorrow</span></div>
+  </div>
+</body>
+</html>

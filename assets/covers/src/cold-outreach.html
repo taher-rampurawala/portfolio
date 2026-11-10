@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" /><title>Cover · Cold Outreach</title>
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { --a: #ff6f91; --bg: radial-gradient(700px 600px at 70% 55%, rgba(255,70,120,.28), transparent 65%), radial-gradient(600px 500px at 0% 0%, rgba(255,140,90,.18), transparent 70%), linear-gradient(160deg, #16040a, #22070f 55%, #0d0206); --edge: rgba(255,111,145,.28); }
+  .review { left: 90px; top: 220px; width: 1000px; padding: 0; overflow: hidden; }
+  .r__bar { display: flex; align-items: center; justify-content: space-between; padding: 22px 26px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .r__bar b { font-size: 21px; }
+  .row { display: grid; grid-template-columns: 220px 1fr 170px; gap: 20px; align-items: center; padding: 18px 26px; border-top: 1px solid rgba(255,255,255,.06); }
+  .row b { display: block; font-size: 17px; }
+  .row span { font: 500 13px "JetBrains Mono", monospace; color: #b08a95; }
+  .row p { font-size: 16px; line-height: 1.45; color: #e9d6db; }
+  .st { justify-self: end; display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 10px; font: 600 14px "JetBrains Mono", monospace; border: 1px solid; }
+  .st::after { content: "▾"; opacity: .7; }
+  .ap { color: #3ddc97; border-color: rgba(61,220,151,.5); background: rgba(61,220,151,.1); }
+  .se { color: #8fc7ff; border-color: rgba(143,199,255,.45); background: rgba(143,199,255,.08); }
+  .rj { color: #ff8a8a; border-color: rgba(255,138,138,.45); background: rgba(255,138,138,.08); }
+  .pe { color: #ffd27a; border-color: rgba(255,210,122,.45); background: rgba(255,210,122,.08); }
+  .side { position: absolute; right: 90px; top: 220px; width: 400px; display: grid; gap: 18px; }
+  .card { padding: 24px; border-radius: 22px; background: rgba(30,8,16,.85); border: 1px solid rgba(255,111,145,.3); }
+  .card .big { font-size: 54px; font-weight: 700; letter-spacing: -0.03em; color: #ff9db3; }
+  .card p { margin-top: 4px; font: 600 14px "JetBrains Mono", monospace; color: #c9a3ad; letter-spacing: .06em; }
+  .clock { display: flex; align-items: center; gap: 14px; }
+  .clock i { width: 54px; height: 54px; border-radius: 50%; border: 3px solid #ff6f91; position: relative; flex: none; }
+  .clock i::before { content: ""; position: absolute; left: 24px; top: 8px; width: 3px; height: 20px; background: #ff6f91; border-radius: 2px; }
+  .clock b { font-size: 22px; }
+</style></head>
+<body class="pattern-grid">
+  <div class="head"><p>Google Sheets · OpenAI · Gmail · n8n</p><h1>Cold Outreach, Human-Approved</h1></div>
+  <div class="glass review">
+    <div class="r__bar"><b>Review sheet · batch 14</b><span class="chip">email + LinkedIn drafts</span></div>
+    <div class="row"><div><b>Dr. Sara Haddad</b><span>Pearl Dental</span></div><p>"Saw Pearl Dental just opened a second clinic. Missed calls after 7 PM…"</p><span class="st se">Sent</span></div>
+    <div class="row"><div><b>Dr. Omar Nasser</b><span>Smile Studio</span></div><p>"Quick idea for Smile Studio's WhatsApp bookings: patients could…"</p><span class="st ap">Approved</span></div>
+    <div class="row"><div><b>Dr. Leena Rao</b><span>Bright Clinic</span></div><p>"Noticed Bright Clinic's reviews mention long hold times on…"</p><span class="st pe">Pending</span></div>
+    <div class="row"><div><b>Dr. Faisal Amin</b><span>Dentique</span></div><p>"Hi Faisal, I build AI receptionists for clinics like Dentique…"</p><span class="st rj">Rejected</span></div>
+  </div>
+  <div class="side">
+    <div class="card"><span class="big">12</span><p>MAX EMAILS PER RUN</p></div>
+    <div class="card clock"><i></i><div><b>every 15 min</b><p>40 s between sends</p></div></div>
+    <div class="card"><span class="big" style="font-size:40px">0 repeats</span><p>NEVER EMAILS AN ADDRESS TWICE</p></div>
+  </div>
+</body></html>
